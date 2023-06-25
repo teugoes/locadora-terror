@@ -1,0 +1,98 @@
+package pacote;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Locadora {
+	private List<Filme> catalogo = new ArrayList<>();
+	private Scanner scanner = new Scanner(System.in);
+	
+	public void adicionarFilme() {
+		System.out.println("Digite o titulo do filme: ");
+		String titulo = scanner.nextLine();
+		System.out.println("Digite o diretor do filme: ");
+		String diretor = scanner.nextLine();
+		System.out.println("Digite o ano de lançamento do filme: ");
+		int anoLancamento = scanner.nextInt();
+		scanner.nextLine();
+		System.out.println("Digite a sinopse do filme: ");
+		String sinopse = scanner.nextLine();
+		catalogo.add(new FilmeTerror(titulo, diretor, anoLancamento, sinopse, true));
+		System.out.println("Filme adicionado com sucesso! ");
+	}
+	
+	public void removerFilme() {
+		System.out.println("Digite o título do filme que deseja remover: ");
+		String titulo = scanner.nextLine();
+		
+		boolean removido = false;
+		
+		for (Filme filme : catalogo) {
+			if (filme.getTitulo().equalsIgnoreCase(titulo)) {
+				catalogo.remove(filme);
+				removido = true;
+				System.out.println("Filme removido com sucesso!");
+				break;
+			}
+		}
+		if (!removido) {
+			System.out.println("Filme não encontrado.");
+		}
+	}
+
+	public Filme buscarFilme() {
+		System.out.println("Digite o título do filme que deseja buscar: ");
+		String titulo = scanner.nextLine();
+		for (Filme filme : catalogo) {
+			if (filme.getTitulo().equalsIgnoreCase(titulo)) {
+				return filme;
+			} 
+		}
+		return null;
+	}
+	
+	public void atualizarFilme() {
+		System.out.println("Digite o título do filme que deseja atualizar: ");
+		String titulo = scanner.nextLine();
+		
+		for(int i = 0; i < catalogo.size() ; i++) {
+			Filme filme = catalogo.get(i);
+			if(filme.getTitulo().equalsIgnoreCase(titulo)) {
+				System.out.println("Digite o titulo do filme: ");
+				String novoTitulo = scanner.nextLine();
+				System.out.println("Digite o diretor do filme: ");
+				String novoDiretor = scanner.nextLine();
+				System.out.println("Digite o ano de lançamento do filme: ");
+				int novoAnoLancamento = scanner.nextInt();
+				scanner.nextLine();
+				System.out.println("Digite a sinopse do filme: ");
+				String novaSinopse = scanner.nextLine();
+				
+				FilmeTerror novoFilme = new FilmeTerror(novoTitulo, novoDiretor, novoAnoLancamento, novaSinopse, true);
+				
+				catalogo.set(i, novoFilme);
+				System.out.println("Filme atualizado com sucesso!");
+				break;
+			}
+		}
+	}
+	
+	public void exibirCatalogo() {
+		System.out.println("**** Catálogo de Filmes ****");
+		if (catalogo.isEmpty()){
+			System.out.println("O catálogo de filmes está vazio!");
+		} else {
+			for (Filme filme : catalogo) {
+				System.out.println("Título: " + filme.getTitulo());
+				System.out.println("Diretor: " + filme.getDiretor());
+				System.out.println("Ano de Lançamento: " + filme.getAnoLancamento());
+				System.out.println("Sinopse: " + filme.getSinopse());
+				System.out.println("Disponível? " + filme.isDisponivel());
+				System.out.println("Tipo: " + filme.getTipo());
+				System.out.println("***********************");
+				
+			}
+		}
+	}
+}
