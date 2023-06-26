@@ -95,4 +95,36 @@ public class Locadora {
 			}
 		}
 	}
+	
+	public void alugarFilme() {
+		System.out.println("Digite o título do filme que deseja pegar emprestado: ");
+		String titulo = scanner.nextLine();
+		
+		boolean filmeEncontrado = false;
+		double carteira = 0.00;
+		int alugado = 0;
+		
+		for(Filme filme : catalogo) {
+			if (filme.getTitulo().equalsIgnoreCase(titulo)) {
+				if(filme.isDisponivel()) {
+					filme.setDisponivel(false);
+					System.out.println("Filme emprestado com sucesso.");
+					carteira = carteira + 5.99;
+					alugado = alugado +1;
+				} else {
+					System.out.println("Filme indisponível pra alugar! ");
+				}
+				filmeEncontrado = true;
+				break;
+			}
+		}
+		
+		if (!filmeEncontrado) {
+			System.out.println("Filme não encontrado.");
+		}
+		
+		System.out.println("Valor a pagar: " + carteira);
+		
+		System.out.println("Filmes alugados: ");
+	}
 }
