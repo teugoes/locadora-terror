@@ -12,13 +12,14 @@ public class Main {
 		boolean executarSistema = true;
 
 		while(executarSistema) {
-			System.out.println("*****LOCADORA DE FILMES DE TERROR*****");
-			System.out.println("Tipos de perfis: ");
+			mostrarTituloDaLocadora();
+			System.out.println();
+			System.out.println("Menu Principal");
 			System.out.println("1. ADM");
 			System.out.println("2. Usuário");
 			System.out.println("3. Sair do sistema completamente! ");
 			System.out.println();
-			System.out.println("Você é ADM ou vai alugar um filme? ");
+			System.out.print("Digite a opção desejada: ");
 
 
 			int perfil = scanner.nextInt();
@@ -29,7 +30,7 @@ public class Main {
 				boolean executarAdm = true;
 
 				while(executarAdm) {
-					System.out.println("*****LOCADORA DE FILMES DE TERROR*****");
+					mostrarTituloDaLocadora();
 					System.out.println();
 					System.out.println("1. Adicionar um filme");
 					System.out.println("2. Remover um filme");
@@ -41,7 +42,8 @@ public class Main {
 
 					int opcao = scanner.nextInt();
 					scanner.nextLine();
-
+					System.out.println();
+					
 					switch(opcao) {
 					case 1:
 						locadora.adicionarFilme();
@@ -52,7 +54,8 @@ public class Main {
 						break;
 
 					case 3:
-						locadora.buscarFilme();
+						System.out.println(locadora.buscarFilme());
+						System.out.println();
 						break;
 
 					case 4:
@@ -65,7 +68,7 @@ public class Main {
 
 					case 6:	
 						executarAdm = false;
-						System.out.println("Saindo do sistema da locadora...");
+						System.out.println("Saindo da área de ADM");
 						break;
 
 					default:	
@@ -73,12 +76,13 @@ public class Main {
 						break;
 					}
 				}
+				break;
 
 			case 2:
 				boolean executarUsuario = true;
 
 				while(executarUsuario) {
-					System.out.println("*****LOCADORA DE FILMES DE TERROR*****");
+					mostrarTituloDaLocadora();
 					System.out.println();
 					System.out.println("1. Alugar um filme");
 					System.out.println("2. Sair");
@@ -87,6 +91,8 @@ public class Main {
 					int opcao = scanner.nextInt();
 					scanner.nextLine();
 
+					System.out.println();
+
 					switch(opcao) {
 					case 1:
 						locadora.alugarFilme();
@@ -94,7 +100,7 @@ public class Main {
 
 					case 2:
 						executarUsuario = false;
-						System.out.println("Saindo do sistema da locadora...");
+						System.out.println("Saindo da área de Usuario");
 						break;
 
 					default:	
@@ -112,9 +118,14 @@ public class Main {
 			default: 
 				System.out.println("Opção inválida, tente novamente");
 			}
-
-			scanner.close();
 		}
+		scanner.close();
+	}
+
+	public static void mostrarTituloDaLocadora() {
+		System.out.println("****************************************");
+		System.out.println("***** LOCADORA DE FILMES DE TERROR *****");
+		System.out.println("****************************************");
 	}
 }
 	

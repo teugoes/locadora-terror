@@ -57,7 +57,19 @@ abstract class Filme {
 	
 	public abstract String getTipo();
 
-	
-	
-	
+	public String toString(){
+		StringBuilder builder = new StringBuilder();
+		
+		builder.append("***********************\n");
+		builder.append("Título: " + titulo + "\n");
+		builder.append("Diretor: " + diretor + "\n");
+		builder.append("Ano de Lançamento: " + anoLancamento + "\n");
+		builder.append("Sinopse: " + sinopse + "\n");
+		builder.append("Disponível? " + disponivel + "\n");
+		builder.append("Tipo: " + getTipo() + "\n");
+		builder.append("***********************");
+
+		return builder.toString();
+	}
+
 }

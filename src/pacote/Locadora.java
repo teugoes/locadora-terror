@@ -9,17 +9,17 @@ public class Locadora {
 	private Scanner scanner = new Scanner(System.in);
 	
 	public void adicionarFilme() {
-		System.out.println("Digite o titulo do filme: ");
+		System.out.print("Digite o titulo do filme: ");
 		String titulo = scanner.nextLine();
-		System.out.println("Digite o diretor do filme: ");
+		System.out.print("Digite o diretor do filme: ");
 		String diretor = scanner.nextLine();
-		System.out.println("Digite o ano de lançamento do filme: ");
+		System.out.print("Digite o ano de lançamento do filme: ");
 		int anoLancamento = scanner.nextInt();
 		scanner.nextLine();
-		System.out.println("Digite a sinopse do filme: ");
+		System.out.print("Digite a sinopse do filme: ");
 		String sinopse = scanner.nextLine();
 		catalogo.add(new FilmeTerror(titulo, diretor, anoLancamento, sinopse, true));
-		System.out.println("Filme adicionado com sucesso! ");
+		System.out.println("Filme adicionado com sucesso! \n");
 	}
 	
 	public void removerFilme() {
@@ -32,20 +32,21 @@ public class Locadora {
 			if (filme.getTitulo().equalsIgnoreCase(titulo)) {
 				catalogo.remove(filme);
 				removido = true;
-				System.out.println("Filme removido com sucesso!");
+				System.out.println("Filme removido com sucesso!\n");
 				break;
 			}
 		}
 		if (!removido) {
-			System.out.println("Filme não encontrado.");
+			System.out.println("Filme não encontrado.\n");
 		}
 	}
 
 	public Filme buscarFilme() {
-		System.out.println("Digite o título do filme que deseja buscar: ");
+		System.out.print("Digite o título do filme que deseja buscar: ");
 		String titulo = scanner.nextLine();
 		for (Filme filme : catalogo) {
 			if (filme.getTitulo().equalsIgnoreCase(titulo)) {
+				System.out.println();
 				return filme;
 			} 
 		}
@@ -110,7 +111,7 @@ public class Locadora {
 					filme.setDisponivel(false);
 					System.out.println("Filme emprestado com sucesso.");
 					carteira = carteira + 5.99;
-					alugado = alugado +1;
+					alugado = alugado + 1;
 				} else {
 					System.out.println("Filme indisponível pra alugar! ");
 				}
