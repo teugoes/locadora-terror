@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		Locadora locadora = new Locadora();
+		Locadora locadora = new Locadora(0, 0);
 		Scanner scanner = new Scanner(System.in);
 
 

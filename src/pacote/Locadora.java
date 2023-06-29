@@ -5,8 +5,17 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Locadora {
+	private int alugados = 0;
+	private double carteira = 0.0;
 	private List<Filme> catalogo = new ArrayList<>();
 	private Scanner scanner = new Scanner(System.in);
+	
+	public Locadora(int alugados, double carteira) {
+		this.alugados = alugados;
+		this.carteira = carteira;
+	}
+
+	
 	
 	public void adicionarFilme() {
 		System.out.print("Digite o titulo do filme: ");
@@ -102,8 +111,6 @@ public class Locadora {
 		String titulo = scanner.nextLine();
 		
 		boolean filmeEncontrado = false;
-		double carteira = 0.00;
-		int alugado = 0;
 		
 		for(Filme filme : catalogo) {
 			if (filme.getTitulo().equalsIgnoreCase(titulo)) {
@@ -111,7 +118,7 @@ public class Locadora {
 					filme.setDisponivel(false);
 					System.out.println("Filme emprestado com sucesso.");
 					carteira = carteira + 5.99;
-					alugado = alugado + 1;
+					alugados = alugados + 1;
 				} else {
 					System.out.println("Filme indisponível pra alugar! ");
 				}
@@ -126,6 +133,6 @@ public class Locadora {
 		
 		System.out.println("Valor a pagar: " + carteira);
 		
-		System.out.println("Filmes alugados: ");
+		System.out.println("Filmes alugados: " + alugados);
 	}
 }
