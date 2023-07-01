@@ -14,17 +14,27 @@ public class Locadora {
 		this.alugados = alugados;
 		this.carteira = carteira;
 	}
-
-	
-	
 	public void adicionarFilme() {
 		System.out.print("Digite o titulo do filme: ");
 		String titulo = scanner.nextLine();
 		System.out.print("Digite o diretor do filme: ");
 		String diretor = scanner.nextLine();
-		System.out.print("Digite o ano de lançamento do filme: ");
-		int anoLancamento = scanner.nextInt();
-		scanner.nextLine();
+		
+		boolean teste = true;
+		int anoLancamento;
+		while(teste) {
+			System.out.print("Digite o ano de lançamento do filme: ");
+			String input = scanner.nextLine();
+			try {
+	            anoLancamento = Integer.parseInt(input);
+	            teste = false;
+	        } catch (NumberFormatException e) {
+	            System.out.println("Erro: o valor digitado não é um número inteiro válido.");
+	        }
+			
+		}
+		
+		
 		System.out.print("Digite a sinopse do filme: ");
 		String sinopse = scanner.nextLine();
 		catalogo.add(new FilmeTerror(titulo, diretor, anoLancamento, sinopse, true));
