@@ -21,7 +21,7 @@ public class Locadora {
 		String diretor = scanner.nextLine();
 		
 		boolean teste = true;
-		int anoLancamento;
+		int anoLancamento = 0;
 		while(teste) {
 			System.out.print("Digite o ano de lançamento do filme: ");
 			String input = scanner.nextLine();
@@ -83,9 +83,21 @@ public class Locadora {
 				String novoTitulo = scanner.nextLine();
 				System.out.println("Digite o diretor do filme: ");
 				String novoDiretor = scanner.nextLine();
-				System.out.println("Digite o ano de lançamento do filme: ");
-				int novoAnoLancamento = scanner.nextInt();
-				scanner.nextLine();
+				
+				boolean teste = true;
+				int novoAnoLancamento = 0;
+				while(teste) {
+					System.out.print("Digite o ano de lançamento do filme: ");
+					String input = scanner.nextLine();
+					try {
+			            novoAnoLancamento = Integer.parseInt(input);
+			            teste = false;
+			        } catch (NumberFormatException e) {
+			            System.out.println("Erro: o valor digitado não é um número, tente novamente\n");
+			        }
+					
+				}
+				
 				System.out.println("Digite a sinopse do filme: ");
 				String novaSinopse = scanner.nextLine();
 				
