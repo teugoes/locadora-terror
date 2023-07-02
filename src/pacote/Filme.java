@@ -7,6 +7,8 @@ abstract class Filme {
 	private String sinopse;
 	private boolean disponivel;
 	
+	public abstract String getTipo();
+	
 	public String getTitulo() {
 		return titulo;
 	}
@@ -55,7 +57,6 @@ abstract class Filme {
 		this.disponivel = disponivel;
 	}
 	
-	public abstract String getTipo();
 
 	public String toString(){
 		StringBuilder builder = new StringBuilder();

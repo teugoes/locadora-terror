@@ -7,6 +7,7 @@ public class FilmeTerror extends Filme{
 	}
 	
 	//Polimorfismo
+	
 	public String getTipo(){
 		return "Terror";
 	}

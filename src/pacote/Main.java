@@ -1,5 +1,6 @@
 package pacote;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -22,8 +23,16 @@ public class Main {
 			System.out.print("Digite a opção desejada: ");
 
 
-			int perfil = scanner.nextInt();
-			scanner.nextLine();
+			int perfil = 0;
+			try {
+				perfil = scanner.nextInt();
+				scanner.nextLine();
+			} catch (InputMismatchException e) {
+				scanner.nextLine();
+				System.out.println("Digitou incorretamente, tente de novo.");
+			}
+			
+			System.out.println();
 
 			switch (perfil) {
 			case 1:
@@ -40,8 +49,14 @@ public class Main {
 					System.out.println("6. Sair");
 					System.out.print("Escolha uma opção: ");
 
-					int opcao = scanner.nextInt();
-					scanner.nextLine();
+					int opcao = 0;
+					try {
+						opcao = scanner.nextInt();
+						scanner.nextLine();
+					} catch (InputMismatchException e) {
+						scanner.nextLine();
+						System.out.println("Digitou incorretamente, tente de novo.");
+					}
 					System.out.println();
 					
 					switch(opcao) {
@@ -72,7 +87,7 @@ public class Main {
 						break;
 
 					default:	
-						System.out.println("Opção inválida, tente novamente!");
+						System.out.println("Opção inválida, tente novamente!\n");
 						break;
 					}
 				}
@@ -88,8 +103,15 @@ public class Main {
 					System.out.println("2. Sair");
 					System.out.print("Escolha uma opção: ");
 
-					int opcao = scanner.nextInt();
-					scanner.nextLine();
+					int opcao = 0;
+					try {
+						opcao = scanner.nextInt();
+						scanner.nextLine();
+					} catch (InputMismatchException e) {
+						scanner.nextLine();
+						System.out.println("Digitou incorretamente, tente de novo.");
+					}
+					System.out.println();
 
 					System.out.println();
 
