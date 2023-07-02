@@ -13,13 +13,13 @@ public class Main {
 		boolean executarSistema = true;
 
 		while(executarSistema) {
-			mostrarTituloDaLocadora();
-			System.out.println();
-			System.out.println("Menu Principal");
+			locadora.mostrarTituloDaLocadora();
+			System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━ ✤ ━━━━━━━━━━━━━━━━━━━━━━━━━━");
+			System.out.println("          Menu Principal");
 			System.out.println("1. ADM");
 			System.out.println("2. Usuário");
 			System.out.println("3. Sair do sistema completamente! ");
-			System.out.println();
+			System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━ ✤ ━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 			System.out.print("Digite a opção desejada: ");
 
 
@@ -39,14 +39,16 @@ public class Main {
 				boolean executarAdm = true;
 
 				while(executarAdm) {
-					mostrarTituloDaLocadora();
-					System.out.println();
+					locadora.mostrarTituloDaLocadora();
+					System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━ ✤ ━━━━━━━━━━━━━━━━━━━━━━━━━━");
+					System.out.println("             Menu de ADM");
 					System.out.println("1. Adicionar um filme");
 					System.out.println("2. Remover um filme");
 					System.out.println("3. Buscar um filme");
 					System.out.println("4. Atualizar um filme");
 					System.out.println("5. Exibir catálogo completo de filmes");
 					System.out.println("6. Sair");
+					System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━ ✤ ━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 					System.out.print("Escolha uma opção: ");
 
 					int opcao = 0;
@@ -97,10 +99,12 @@ public class Main {
 				boolean executarUsuario = true;
 
 				while(executarUsuario) {
-					mostrarTituloDaLocadora();
-					System.out.println();
+					locadora.mostrarTituloDaLocadora();
+					System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━ ✤ ━━━━━━━━━━━━━━━━━━━━━━━━━━");
+					System.out.println("             Menu de Usuário");
 					System.out.println("1. Alugar um filme");
 					System.out.println("2. Sair");
+					System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━ ✤ ━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 					System.out.print("Escolha uma opção: ");
 
 					int opcao = 0;
@@ -144,10 +148,6 @@ public class Main {
 		scanner.close();
 	}
 
-	public static void mostrarTituloDaLocadora() {
-		System.out.println("****************************************");
-		System.out.println("***** LOCADORA DE FILMES DE TERROR *****");
-		System.out.println("****************************************");
-	}
+	
 }
 	

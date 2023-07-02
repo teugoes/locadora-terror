@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Locadora {
+public class Locadora implements Titulo {
 	private int alugados = 0;
 	private double carteira = 0.0;
 	private List<Filme> catalogo = new ArrayList<>();
@@ -14,6 +14,13 @@ public class Locadora {
 		this.alugados = alugados;
 		this.carteira = carteira;
 	}
+	
+	public void mostrarTituloDaLocadora() {
+		System.out.println("╭─────────────────────────╯•╰─────────────────────────╮");
+		System.out.println(" ───── LOCADORA SUSTOS E PIPOCA ─────");
+		System.out.println("╰─────────────────────────╮•╭─────────────────────────╯\n\n");
+	}
+	
 	public void adicionarFilme() {
 		System.out.print("Digite o titulo do filme: ");
 		String titulo = scanner.nextLine();
@@ -111,7 +118,8 @@ public class Locadora {
 	}
 	
 	public void exibirCatalogo() {
-		System.out.println("**** Catálogo de Filmes ****");
+		System.out.println("\n━━━━━━━━━━━━━━━━━━━━━━━━━━ ☪ ━━━━━━━━━━━━━━━━━━━━━━━━━━");
+		System.out.println("           Catalogo de Filmes");
 		if (catalogo.isEmpty()){
 			System.out.println("O catálogo de filmes está vazio!");
 		} else {
@@ -122,9 +130,9 @@ public class Locadora {
 				System.out.println("Sinopse: " + filme.getSinopse());
 				System.out.println("Disponível? " + filme.isDisponivel());
 				System.out.println("Tipo: " + filme.getTipo());
-				System.out.println("***********************");
-				
+				System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");	
 			}
+			System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━ ☪ ━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 		}
 	}
 	
