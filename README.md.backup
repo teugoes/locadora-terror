@@ -31,15 +31,15 @@ Compilador Java ou ambiente de desenvolvimento integrado (IDE).
 ## Estrutura do Projeto
 O projeto está organizado da seguinte forma:
 
-Main.java: Contém o método main que inicia a aplicação e controla a interação com o usuário.
+**Main.java:** Contém o método main que inicia a aplicação e controla a interação com o usuário.
 
-Locadora.java: Classe que representa a locadora de filmes de terror, contendo as funcionalidades de CRUD e interações com o catálogo de filmes.
+**Locadora.java:** Classe que representa a locadora de filmes de terror, contendo as funcionalidades de CRUD e interações com o catálogo de filmes.
 
-Filme.java: Classe que representa um filme, com atributos como título, diretor, ano de lançamento, etc.
+**Filme.java:** Classe que representa um filme, com atributos como título, diretor, ano de lançamento, etc.
 
-FilmeTerror.java: Classe que herda de Filme.java representando um filme de terror.
+**FilmeTerror.java:** Classe que herda de Filme.java representando um filme de terror.
 
-Titulo.java: interface que oferece o método mostrarTituloDaLocadora() para servir um letreiro visual para o menu
+**Titulo.java:** interface que oferece o método mostrarTituloDaLocadora() para servir um letreiro visual para o menu
 
 ## Contribuições
 Contribuições são bem-vindas! Se você tiver sugestões, melhorias ou correções, sinta-se à vontade para abrir uma issue ou enviar um pull request.
