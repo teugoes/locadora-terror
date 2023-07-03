@@ -1,5 +1,5 @@
 package pacote;
-
+//Herança
 public class FilmeTerror extends Filme{
 	
 	public FilmeTerror(String titulo, String diretor, int anoLancamento, String sinopse, boolean disponivel) {

@@ -22,7 +22,7 @@ public class Main {
 			System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━ ✤ ━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 			System.out.print("Digite a opção desejada: ");
 
-
+			//Tratamento de exceção
 			int perfil = 0;
 			try {
 				perfil = scanner.nextInt();
@@ -50,7 +50,7 @@ public class Main {
 					System.out.println("6. Sair");
 					System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━ ✤ ━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 					System.out.print("Escolha uma opção: ");
-
+					//Tratamento de exceção
 					int opcao = 0;
 					try {
 						opcao = scanner.nextInt();
@@ -106,7 +106,7 @@ public class Main {
 					System.out.println("2. Sair");
 					System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━ ✤ ━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 					System.out.print("Escolha uma opção: ");
-
+					//Tratamento de exceção
 					int opcao = 0;
 					try {
 						opcao = scanner.nextInt();

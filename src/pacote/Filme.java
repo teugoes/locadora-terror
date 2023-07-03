@@ -1,5 +1,5 @@
 package pacote;
-
+//Classe Abstrata com método abstrato
 abstract class Filme {
 	private String titulo;
 	private String diretor;

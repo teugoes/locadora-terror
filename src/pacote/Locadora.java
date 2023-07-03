@@ -3,7 +3,7 @@ package pacote;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+//Interface
 public class Locadora implements Titulo {
 	private int alugados = 0;
 	private double carteira = 0.0;
@@ -14,7 +14,7 @@ public class Locadora implements Titulo {
 		this.alugados = alugados;
 		this.carteira = carteira;
 	}
-	
+	//Polimorfismo
 	public void mostrarTituloDaLocadora() {
 		System.out.println("╭─────────────────────────╯•╰─────────────────────────╮");
 		System.out.println(" ───── LOCADORA SUSTOS E PIPOCA ─────");
@@ -26,7 +26,7 @@ public class Locadora implements Titulo {
 		String titulo = scanner.nextLine();
 		System.out.print("Digite o diretor do filme: ");
 		String diretor = scanner.nextLine();
-		
+		//Tratamento de exceção
 		boolean teste = true;
 		int anoLancamento = 0;
 		while(teste) {
@@ -66,7 +66,7 @@ public class Locadora implements Titulo {
 			System.out.println("Filme não encontrado.\n");
 		}
 	}
-
+	
 	public Filme buscarFilme() {
 		System.out.print("Digite o título do filme que deseja buscar: ");
 		String titulo = scanner.nextLine();
@@ -90,7 +90,7 @@ public class Locadora implements Titulo {
 				String novoTitulo = scanner.nextLine();
 				System.out.println("Digite o diretor do filme: ");
 				String novoDiretor = scanner.nextLine();
-				
+				//Tratamento de exceção
 				boolean teste = true;
 				int novoAnoLancamento = 0;
 				while(teste) {
