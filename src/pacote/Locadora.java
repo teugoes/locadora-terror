@@ -1,16 +1,24 @@
 package pacote;
 
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
+
+
 //Interface
 public class Locadora implements Titulo {
 	private int alugados = 0;
 	private double carteira = 0.0;
-	private List<Filme> catalogo = new ArrayList<>();
+	//private List<Filme> catalogo = new ArrayList<>();
+	private Map<String, Filme> catalogo;
 	private Scanner scanner = new Scanner(System.in);
+
 	
 	public Locadora(int alugados, double carteira) {
+		catalogo = new HashMap<>();
 		this.alugados = alugados;
 		this.carteira = carteira;
 	}
@@ -40,11 +48,9 @@ public class Locadora implements Titulo {
 	        }
 			
 		}
-		
-		
 		System.out.print("Digite a sinopse do filme: ");
 		String sinopse = scanner.nextLine();
-		catalogo.add(new FilmeTerror(titulo, diretor, anoLancamento, sinopse, true));
+		catalogo.put(titulo, new FilmeTerror(titulo, diretor, anoLancamento, sinopse, true));
 		System.out.println("Filme adicionado com sucesso! \n");
 	}
 	
@@ -54,9 +60,9 @@ public class Locadora implements Titulo {
 		
 		boolean removido = false;
 		
-		for (Filme filme : catalogo) {
+		for (Filme filme : catalogo.values()) {
 			if (filme.getTitulo().equalsIgnoreCase(titulo)) {
-				catalogo.remove(filme);
+				catalogo.remove(titulo);
 				removido = true;
 				System.out.println("Filme removido com sucesso!\n");
 				break;
@@ -70,7 +76,7 @@ public class Locadora implements Titulo {
 	public Filme buscarFilme() {
 		System.out.print("Digite o título do filme que deseja buscar: ");
 		String titulo = scanner.nextLine();
-		for (Filme filme : catalogo) {
+		for (Filme filme : catalogo.values()) {
 			if (filme.getTitulo().equalsIgnoreCase(titulo)) {
 				System.out.println();
 				return filme;
@@ -84,7 +90,7 @@ public class Locadora implements Titulo {
 		String titulo = scanner.nextLine();
 		
 		for(int i = 0; i < catalogo.size() ; i++) {
-			Filme filme = catalogo.get(i);
+			Filme filme = catalogo.get(titulo);
 			if(filme.getTitulo().equalsIgnoreCase(titulo)) {
 				System.out.println("Digite o titulo do filme: ");
 				String novoTitulo = scanner.nextLine();
@@ -104,13 +110,12 @@ public class Locadora implements Titulo {
 			        }
 					
 				}
-				
 				System.out.println("Digite a sinopse do filme: ");
 				String novaSinopse = scanner.nextLine();
 				
 				FilmeTerror novoFilme = new FilmeTerror(novoTitulo, novoDiretor, novoAnoLancamento, novaSinopse, true);
 				
-				catalogo.set(i, novoFilme);
+				catalogo.put(titulo, novoFilme);
 				System.out.println("Filme atualizado com sucesso!");
 				break;
 			}
@@ -123,7 +128,7 @@ public class Locadora implements Titulo {
 		if (catalogo.isEmpty()){
 			System.out.println("O catálogo de filmes está vazio!");
 		} else {
-			for (Filme filme : catalogo) {
+			for (Filme filme : catalogo.values()) {
 				System.out.println("Título: " + filme.getTitulo());
 				System.out.println("Diretor: " + filme.getDiretor());
 				System.out.println("Ano de Lançamento: " + filme.getAnoLancamento());
@@ -142,7 +147,7 @@ public class Locadora implements Titulo {
 		
 		boolean filmeEncontrado = false;
 		
-		for(Filme filme : catalogo) {
+		for(Filme filme : catalogo.values()) {
 			if (filme.getTitulo().equalsIgnoreCase(titulo)) {
 				if(filme.isDisponivel()) {
 					filme.setDisponivel(false);
