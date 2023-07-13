@@ -133,8 +133,6 @@ public class Main {
 						System.out.println("Opção inválida, tente novamente!");
 						break;
 					}
-
-
 				}
 			case 3:
 				executarSistema = false;

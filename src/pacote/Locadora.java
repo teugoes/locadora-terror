@@ -1,18 +1,12 @@
 package pacote;
 
-//import java.util.ArrayList;
-//import java.util.List;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-
-//Interface
 public class Locadora implements Titulo {
 	private int alugados = 0;
 	private double carteira = 0.0;
-	//private List<Filme> catalogo = new ArrayList<>();
 	private Map<String, Filme> catalogo;
 	private Scanner scanner = new Scanner(System.in);
 
@@ -22,7 +16,7 @@ public class Locadora implements Titulo {
 		this.alugados = alugados;
 		this.carteira = carteira;
 	}
-	//Polimorfismo
+
 	public void mostrarTituloDaLocadora() {
 		System.out.println("╭─────────────────────────╯•╰─────────────────────────╮");
 		System.out.println(" ───── LOCADORA SUSTOS E PIPOCA ─────");
@@ -34,7 +28,6 @@ public class Locadora implements Titulo {
 		String titulo = scanner.nextLine();
 		System.out.print("Digite o diretor do filme: ");
 		String diretor = scanner.nextLine();
-		//Tratamento de exceção
 		boolean teste = true;
 		int anoLancamento = 0;
 		while(teste) {
@@ -96,7 +89,6 @@ public class Locadora implements Titulo {
 				String novoTitulo = scanner.nextLine();
 				System.out.println("Digite o diretor do filme: ");
 				String novoDiretor = scanner.nextLine();
-				//Tratamento de exceção
 				boolean teste = true;
 				int novoAnoLancamento = 0;
 				while(teste) {
@@ -161,13 +153,10 @@ public class Locadora implements Titulo {
 				break;
 			}
 		}
-		
 		if (!filmeEncontrado) {
 			System.out.println("Filme não encontrado.");
 		}
-		
 		System.out.println("Valor a pagar: " + carteira);
-		
 		System.out.println("Filmes alugados: " + alugados);
 	}
 }
