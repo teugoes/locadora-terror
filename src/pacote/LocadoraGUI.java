@@ -4,13 +4,15 @@ import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.Font;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 public class LocadoraGUI extends JFrame{
-
+	
+	Locadora locadora = new Locadora(0, 0);
 	private JButton buttonAdicionar;
     private JButton buttonRemover;
     private JButton buttonAtualizar;
@@ -19,16 +21,19 @@ public class LocadoraGUI extends JFrame{
 	
     public LocadoraGUI() {
         super("Locadora de Filmes de Terror");
+        
+       
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 200);
+        setSize(400, 250);
         setResizable(false);
         setLocationRelativeTo(null);
         
         Container container = getContentPane();
         container.setLayout(new FlowLayout(FlowLayout.CENTER, 30, 30));
 
-        Font font = new Font("Arial", Font.PLAIN, 16);
-
+        Font font = new Font("Arial", Font.PLAIN, 18);
+        
         buttonAdicionar = createButton("Adicionar Filme", font);
         buttonRemover = createButton("Remover Filme", font);
         buttonAtualizar = createButton("Atualizar Filme", font);
@@ -55,25 +60,28 @@ public class LocadoraGUI extends JFrame{
     private void handleButtonClick(String buttonName) {
         switch (buttonName) {
             case "Adicionar Filme":
-                // Lógica para adicionar um filme
+            	locadora.adicionarFilme();
                 break;
             case "Remover Filme":
-                // Lógica para remover um filme
+            	locadora.removerFilme();
                 break;
             case "Atualizar Filme":
-                // Lógica para atualizar um filme
+            	locadora.atualizarFilme();
                 break;
             case "Pesquisar Filme":
-                // Lógica para pesquisar um filme
+            	System.out.println(locadora.buscarFilme());
+				System.out.println();
                 break;
             case "Exibir Catálogo":
-                // Lógica para exibir um catálogo
+            	locadora.exibirCatalogo();
                 break;    
                 
             default:
                 break;
         }
     }
+    
+   
     
 	public static void main(String[] args) {
 		new LocadoraGUI();
